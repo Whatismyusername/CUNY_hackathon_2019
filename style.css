@@ -4,3 +4,14 @@ img{
 *{
   margin:0;
 }
+#links{
+  position:fixed;
+  font-size:30px;
+  font-family:'Baloo Bhai';
+  top:0;
+  color:white;
+  left:1600px;
+}
+a{
+  color:white;
+}
