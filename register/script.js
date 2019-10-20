@@ -103,6 +103,13 @@ $('document').ready(function(){
                 $('#securityLevel').append('&#128077; Good to go!');
                 pw1 = true;
             }
+            if(security[0] <= 2){
+                $('#securityLevel').css('color', 'red')
+            }else if(security[0] <= 4){
+                $('#securityLevel').css('color', 'orange')
+            }else{
+                $('#securityLevel').css('color', 'green')
+            }
             console.log(pw1)
         })
     
