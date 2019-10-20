@@ -4,7 +4,7 @@ $('document').ready(function(){
 })
 
 function intialized(){
-	INFO = "Mainchance Drop-In Center,Manhattan,120 East 32nd Street, New York, NY 10016,Open 24 Hours,40.745377,-73.981306,shelter;Antonio Olivieri Center,Manhattan,257 W 30th Street, New York, NY 10001,Open from 7:30 a.m.-8:30 p.m. This program remain open 24 hours during winter months,40.749139,-73.994016,shelter;Holy Apostles Soup Kitchen,Manhattan,296 9th Ave, New York, NY 10001,Opens Mon- Fri from 10:30AM - 12:30PM,40.758228,-73.992752,food;Welcome Table Soup Kitchen - Xavier Mission,Manhattan,55 W 15th St, New York, NY 10011,Open Sunday from 12:45PM - 3PM,40.737810,-73.995510,food;Village Temple,Manhattan,33 E 12th St, New York, NY 10003,Open,40.733880,-73.992180,food";
+	INFO = "Mainchance Drop-In Center,Manhattan,120 East 32nd Street, New York, NY 10016,Open 24 Hours,40.745377,-73.981306,shelter;Antonio Olivieri Center,Manhattan,257 W 30th Street, New York, NY 10001,Open from 7:30 a.m.-8:30 p.m. This program remain open 24 hours during winter months,40.749139,-73.994016,shelter;Holy Apostles Soup Kitchen,Manhattan,296 9th Ave, New York, NY 10001,Opens Mon- Fri from 10:30AM - 12:30PM,40.758228,-73.992752,food;Welcome Table Soup Kitchen - Xavier Mission,Manhattan,55 W 15th St, New York, NY 10011,Open Sunday from 12:45PM - 3PM,40.737810,-73.995510,food;Village Temple,Manhattan,33 E 12th St, New York, NY 10003,Open,40.733880,-73.992180,food;New York City Rescue Mission,Manhattan,90 Lafayette St, New York, NY 10013,Open 24 Hours,40.717522,-74.001556,shelter;Covenant House New York,Manhattan,550 10th Ave, New York, NY 10018, Open 24 hours,40.758870,-73.996230,shelter;The Bowery Mission,Manhattan,227 Bowery, New York, NY 10002,Open 24 hours,40.721958,-73.992798,food";
 	
 	var sortedInfo = INFO.split(";");
 	for(var i = 0; i < sortedInfo.length; i++)
@@ -19,7 +19,7 @@ function intialized(){
 	var map = new google.maps.Map(document.getElementById("map"), mapOption);
 	var marker = new google.maps.Marker({position: {lat: 40.7405, lng: -73.9832}, map: map, animation: google.maps.Animation.DROP, title: "You are here"});
 	var infoWindow = new google.maps.InfoWindow({content: '<h2> You are here </h2>'});
-	marker.addListener('', function(){ infoWindow.open(map, marker)});
+	infoWindow.open(map, marker);
 	
 	for(var i = 0; i < sortedInfo.length; i++)
 	{
@@ -53,7 +53,18 @@ function addMarkers(coords, name, address, place, time, map)
 		animation: google.maps.Animation.DROP};
 	var marker = new google.maps.Marker(propertites);
 	var infoWindow = new google.maps.InfoWindow({content: '<h1>' + name + '</h1>' + '<h2>' + address + '</h2>' + '<h3>' + time + '</h3>'});
-	marker.addListener('click', function(){ infoWindow.open(map, marker)});
+	var infoOpen = false;
+	marker.addListener('click', function()
+	{ 
+		if(infoOpen == true)
+		{
+			infoWindow.close(map, marker);
+			infoOpen = false;
+		} else {
+			infoWindow.open(map, marker);
+			infoOpen = true;
+		}
+	});
 }
 
  
