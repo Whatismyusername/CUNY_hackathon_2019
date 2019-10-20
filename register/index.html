@@ -3,6 +3,17 @@
         <title>FindMe</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
+        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+
+        <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+
+        <!-- Add Firebase products that you want to use -->
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
         <!-- CSS -->
         <link href="style.css" rel="stylesheet">
 
@@ -10,10 +21,35 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
         <!-- JavaScript -->
-        <script src="script.js"></script>
-
+        <script src="./script.js"></script>
     </head>
-    <body>
-        <h1>Hello World</h1>
-    </body>
+    <form>
+        Organization Name:
+        <div>
+            <input id='organizationName'> <p id='orgName'></p><br>
+        </div>
+        Organization Email:
+        <div>
+            <input id='organizationEmail'> <p id='orgEmail'></p><br>
+        </div>
+        Organization Phone Number:
+        <div>
+            <input id='organizationPhone' type='number'> <p id='phoneNum'></p><br>
+        </div>
+        Username:
+        <div>
+            <input id='username'> <p id='usernameTaken'></p> <br>
+        </div>
+        Password:
+        <div>
+            <input class='pw' id='pw1' type='password'> <p id='securityLevel'></p> <br>
+        </div>
+        Confirm Password:
+        <div>
+            <input class='pw' id='pw2' type='password'> <p id='matchPw'></p> <br>
+        </div>
+        
+        
+        <button id='submitRegistration'>Submit</button>
+    </form>
 </html>
