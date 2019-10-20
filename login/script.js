@@ -18,6 +18,7 @@ var firebaseRef = firebase.database().ref();
 var username;
 var password;
 $('document').ready(function(){
+    $('#message').hide();
     
     firebaseRef.on('value', snapshot => {
         $('#loginBtn').click(function(){
@@ -29,11 +30,14 @@ $('document').ready(function(){
                 console.log('log in!')
                 window.location.replace("../profile/index.html");
             } else{
-                $('#message').html('Hmmm... It seems like your username or password might be wrong...')
+                $('#message').show();
             }
         })
     })
     
+    $('body').click(function(){
+        $('#message').fadeOut();
+    })
     
 })
 

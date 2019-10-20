@@ -782,3 +782,18 @@
     font-family: 'Nunito', sans-serif;
     font-size:50px;
 }
+#message{
+    font-family: 'Nunito', sans-serif;
+    font-size:50px;
+    position:absolute;
+    border: 1px solid #707070;
+    background:white;
+    opacity:0.9;
+    width: 960px;
+    height: 540px;
+    top:270px;
+    left:480px;
+    border-radius:10px;
+    text-align:center;
+    color:red;
+}
