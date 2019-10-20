@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <title>Profile</title>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+            <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+            <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+    
+            <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+            <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-analytics.js"></script>
+    
+            <!-- Add Firebase products that you want to use -->
+            <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-auth.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+            <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+    
+            <!-- CSS -->
+            <link href="style.css" rel="stylesheet">
+    
+            <!-- JQuery Library -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    
+            <!-- JavaScript -->
+            <script src="./script.js"></script>
+    </head>
+    <body>
+        <div>
+            <h1 id='orgName'></h1><br>
+            <div id='visitor'>
+                Current Population:
+                <p id='currentPop'></p> <br>
+                Max Population:
+                <p id='maxPop'></p> <br>
+                Services Provide:
+                <div>
+                    <ul id='serviceDiv'>
+
+                    </ul>
+                </div>
+                Requirement:
+                <div>
+                    <ul id='requirementDiv'>
+
+                    </ul>
+                </div>
+            </div>
+            <div id='editor'>
+                Current Population:
+                <input id='currentPopInput' type='number'> <button id='saveC'>Save Change</button><br>
+                Max Population:
+                <input id='maxPopInput' type='number'> <button id='saveM'>Save Change</button> <br>
+                Services Provide:
+                <div>
+                    <ul id='serviceInputDiv'>
+
+                    </ul>
+                </div>
+                <input id='serviceInput'>
+                <button id='saveS'>Save Change</button><br>
+                Requirements:
+                <div>
+                    <ul id='requirementInputDiv'>
+
+                    </ul>
+                </div>
+                <input id='requirementInput'>
+                <button id='saveR'>Save Change</button>
+                
+
+            </div>
+            <button id='changeMode'>Switch to Editor Mode</button>
+        </div>
+    </body>
+</html>
